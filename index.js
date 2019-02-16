@@ -37,20 +37,6 @@ app.get('/', (req, res, nex) => {
         return Promise.all(newArr)
       })
     })
-    // // .then(curData => {
-    // //   let newArr = curData.map(user => {
-    // //     return knex('tags')
-    // //     .select('ingredients.id', 'ingredients.name', 'ingredients.amount', 'ingredients.unit')
-    // //     .innerJoin('story_ingredients', 'cocktails_ingredients.ingredient_id', 'ingredients.id')
-    // //     .innerJoin('cocktails', 'cocktails.id', 'cocktails_ingredients.cocktail_id')
-    // //     .where('cocktails.id', cocktail.id)
-    // //     .then(ingredient => {
-    // //       cocktail.ingredients = ingredient
-    // //       return cocktail
-    // //     })
-    // //   })
-    // //   return Promise.all(newArr)
-    // // })
   .then((rows) => {
     res.send(rows)
   })
